@@ -18,7 +18,16 @@ int main(int argc, char* argv[]){
 
     strcpy(my_msg.text, "Hello");
     my_msg.type = 6;
-    msgsnd(ipcId, &my_msg, strlen(my_msg.text) + 1, 0);
+    if( fork() == 0){
+        if(msgsnd(ipcId, &my_msg, strlen(my_msg.text) + 1, 0) != 0){
+            printf("Wiadomosc nie mogla byc wyslana...");
+        };
+    }else{
+        wait(NULL);
+        msgrcv(ipcId, &my_msg, 1024, 6, 0);
+        printf("%s\n", my_msg.text);
+        msgctl(ipcId, IPC_RMID, NULL);
+    }
 
     return 0;
 }

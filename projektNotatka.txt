@@ -1,0 +1,37 @@
+Aplikacja chatowa wysylajaca
+
+komunikacja zawsze za posrednictwem serwera
+klienci logujac sie moga wybrac zainteresowania 
+moga oni je pozniej zmienic
+
+wszyscy klienci zainteresowani danym tematem dostaja wiadomosci na ich temat
+
+Rejestracja/logowanie na system/serwer ID i nazwa
+po stronie serwera klient dopisywany na
+
+mozna zrobic, ze kazde wylogowanie klienta usuwa go 
+
+subskrybcja trwala - dostaje zawsze wszystkie wiadomosci
+sybskrybcja przejsciowa - dostaje okreslona ilosc wiadomosci z danego tematu
+
+inf_nrIndeksu1_nrIndeksu2_s.c - serwer
+inf_nrIndeksu1_nrIndeksu2_k.c - serwer
+inf_nrIndeksu1_nrIndeksu2_*.[ch] - serwer
+
+protokol:
+- strkutura komunikatu
+- typy komunikatow
+- scenariusze komunikacji
+
+
+
+-------------------------
+Serwer - 1 proces
+
+klienci - utworzone procesy
+
+komunikacja za pomoca kolejek
+
+propzycja od pani:
+- zaczac od protokolu komunikacji
+- mozna sie spytac o weryfikacje protokolu do konca grudnia
